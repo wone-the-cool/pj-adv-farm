@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>보스/던전 공략 시스템 (CLAUDE.md "핵심 시스템 2" 상세본)</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<p><a href="../index.html">← 목차</a></p>
+<table class="meta"><tbody>
+<tr><th>status</th><td>draft</td></tr>
+<tr><th>related</th><td><a href="../risks.html">../risks.html</a></td></tr>
+</tbody></table>
+<main>
+<h1>보스/던전 공략 시스템 (CLAUDE.md "핵심 시스템 2" 상세본)</h1>
+<h2>확정된 원칙</h2>
+<ul>
+<li>마을 특산물 포션/장비 있으면 훨씬 수월, 없어도 시간·위험 감수 시 클리어 가능해야 함.</li>
+<li>예: 화염 저항 포션 없이도 불 데미지 감수하며 클리어 가능 / 있으면 훨씬 수월.</li>
+<li><strong>금지</strong>: 완전 자물쇠-열쇠 구조(아이템 없으면 데미지 자체가 안 박히는 방식) — 선형적 순서 강제로 이어져 자유도 철학과 충돌.</li>
+<li><strong>금지 (2026-07-03 사용자 확정, <a href="../meetings/2026-07-03-engine-combat-platform.html">회의록</a>)</strong>: 이상한 던전 시리즈식 "던전 실패 시 마을로 리셋 + 아이템/진행도 부분 손실" 안전판 구조는 <strong>절대 채택하지 않는다</strong>. 사용자 판단: "플레이어의 의지를 꺾는 행위". 스토리/메인 던전은 물론 별도 옵트인 콘텐츠로도 적용하지 않는다 — 향후 누군가 이 아이디어를 다시 제안하더라도 이 결정을 우선 참고할 것.</li>
+</ul>
+<h2>1차 수치 가안 (2026-07-03, <a href="../meetings/2026-07-03-village-opening-structure.html">마을 개방 구조 회의록</a>에서 systems-designer 제안 — 테스트 전 추정치, 미확정)</h2>
+<ul>
+<li>특산물 미보유 시 피격 데미지 배율 ×1.5~2.0 (보스 <strong>속성</strong> 공격 한정, 물리 공격은 배율 미적용 — 회피/포지셔닝 숙련으로 만회 가능하게)</li>
+<li>회복 아이템 소모량 ×2 — 같은 클리어를 하려면 자원 파밍 부담 증가로 "시간"을 체감하게 함. 인위적 타이머는 지양(자유도 철학과 충돌 우려)</li>
+<li>BOTW 패러글라이더 격 안전망 = <strong>노숙/모닥불 시스템</strong>(핵심 시스템 3번)을 필드 리트리트 포인트로 재활용. 위험 신호는 투명벽 대신 적 텍스처 틴트/환경 파티클로 시각화</li>
+<li>컴패니언 NPC(핵심 시스템 5번)를 특산물의 부분 대체제로 활용 가능 (예: 대장장이 계열 동료 동행 시 서리 피해 소량 경감)</li>
+</ul>
+<h2>전투 조작 확정 (2026-07-03, <a href="../meetings/2026-07-03-engine-combat-platform.html">회의록</a> — 상세는 <a href="../format/game-format-tbd.html">docs/format/game-format-tbd.html</a>)</h2>
+<ul>
+<li>기본 2버튼(공격/회피) + 무기 아키타입(3~4종 상한) 종속 특수버튼. MVP는 1~2종만 우선 구현.</li>
+<li>절차적 던전 생성은 <strong>보스룸 제외</strong> 원칙 유지(적용하더라도 여정 구간만) — 단 이 자체가 M3 이후로 유보됨(아래 참고).</li>
+</ul>
+<h2>보류 — 우선순위 낮음 (2026-07-03 사용자 확정)</h2>
+<ul>
+<li><strong>절차적 던전 생성</strong>: 던전 개수가 적은 MVP 단계에서는 생성기 튜닝 비용이 핸드메이드 제작비보다 클 수 있다는 scope-reviewer 지적 반영 — 지금은 순수 핸드메이드로 가고, 던전 수가 늘어나는 확장팩 이후 재검토.</li>
+<li><strong>도전용/엔드리스 던전</strong>(별도 옵트인 콘텐츠 구상): 사용자 확인 — "우선사항 아님". 만들지 않기로 확정한 것은 아니고 백로그로 미룸.</li>
+</ul>
+<h2>미확정 — 수치/구현 필요 (systems-designer 담당)</h2>
+<ul>
+<li>위 수치 가안의 실제 값은 반복 테스트로 조정 필요 — <code>balance-sheet</code> 스킬로 <code>docs/balance/</code>에 정식 표 작성 예정</li>
+<li>던전별 난이도 곡선, 보스 체력/패턴 설계는 반복 테스트 필요 (CLAUDE.md 리스크 3번). scope-reviewer는 마을 수 증가 시 "보스×특산물유무×컴패니언×무기아키타입" 조합 테스트 매트릭스가 조합적으로 증가할 위험을 지적함 — 초기 스코프(마을 1~2개, 무기 아키타입 1~2종) 유지가 실질적 완화책</li>
+<li><a href="../design-reference-retention.html">리텐션 참고자료</a> 기준 뚜렷한 갭: 게임 필/주스(타격감·이펙트 구체안), 변동 보상(보스/필드 드랍의 확률 기반 보상) — 조작방식은 확정됐으나 감각적 피드백은 미설계, 마을1 검증 이후 검토</li>
+</ul>
+<h2>다음 작업 후보</h2>
+<ul>
+<li>마을별 보스 1종 상세 스펙 초안 (패턴, 저항/약점, 특산물 아이템과의 상호작용)</li>
+<li>난이도 밸런싱 시뮬레이션 스프레드시트</li>
+<li>무기 아키타입 1~2종 상세 스펙(스킬 로직, 특산물 속성 주입 방식)</li>
+</ul>
+</main>
+</body>
+</html>

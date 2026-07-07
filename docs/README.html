@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>문서 지도</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<p><a href="index.html">← 목차</a></p>
+
+<main>
+<h1>문서 지도</h1>
+<p>CLAUDE.md는 세션마다 자동 로드되므로 철학/원칙/인덱스만 유지하고, 세부 내용은 이 아래 docs/에 분리했다. <strong>2026-07-03부로 docs/는 html이 원본이다</strong> (과거 md 원본은 <code>old/docs/</code>에 보관).</p>
+<pre><code>docs/
+├── index.html               # 목차 (브라우저 진입점)
+├── assets/style.css          # 공통 스타일시트
+├── systems/          # 핵심 시스템 6종 상세 (CLAUDE.md 요약의 확장본)
+│   ├── villages.html          # 1. 지역/마을 구조
+│   ├── adventure-combat.html  # 2. 보스/던전 공략
+│   ├── time-camping.html      # 3. 시간/노숙
+│   ├── settlement.html        # 4. 정착 전 콘텐츠(대여 농장)
+│   ├── romance-companion.html # 5. NPC 로맨스/컴패니언
+│   └── farming-economy.html   # 6. 경제/작물 시스템
+├── story/
+│   └── plot-hooks.html        # 스토리라인 미확정 논의점 (narrative-writer 담당)
+├── format/
+│   └── game-format-tbd.html   # 게임 형식 미확정 논의점 (technical-advisor 담당)
+├── meetings/                 # 서브에이전트 브레인스토밍 회의록 (brainstorm-topic 스킬 산출물)
+│   ├── README.html
+│   └── &lt;날짜&gt;-&lt;안건&gt;.html
+├── business/                # 표준 제안서 목차 신규 추가분
+│   ├── target-market.html
+│   ├── competitor-analysis.html
+│   └── monetization.html
+├── art/
+│   └── mood-board.html         # 아트 레퍼런스 (표준 제안서 목차 신규 추가분)
+├── roadmap.html                # 개발 마일스톤/일정 (표준 제안서 목차 신규 추가분)
+├── risks.html                  # 리스크 관리 표 (CLAUDE.md 리스크 섹션 상세본, scope-reviewer 담당)
+└── pre-production-checklist.html  # 착수 전 체크리스트 (히스토리 기록형, open-question-facilitator 담당)</code></pre>
+<h2>사용 규칙</h2>
+<ul>
+<li>세부 내용(마을 시놉시스, 캐릭터 시트, 밸런싱 수치)이 늘어나면 <code>docs/villages/&lt;마을명&gt;</code>, <code>docs/characters/&lt;이름&gt;</code> 등으로 추가 분리한다 (확장자는 <code>.md</code>/<code>.html</code> 중 미확정 — 작성 스킬 사용 시 먼저 확인).</li>
+<li>각 문서 상단 메타데이터 표의 <code>status</code>(draft/living-document 등)와 <code>owner_agent</code>로 어떤 에이전트가 주로 다루는 문서인지 표시한다.</li>
+<li>미확정 항목은 항상 "미확정 — 상의 필요" 섹션에 옵션 형태로만 기록한다 (CLAUDE.md 작업 원칙과 동일).</li>
+<li><code>docs/*.html</code>을 직접 Edit할 때는 태그 구조(<code>&lt;table&gt;</code>, <code>&lt;ul&gt;</code> 등)를 깨뜨리지 않도록 주의한다.</li>
+</ul>
+<h2>과거 markdown 원본 (<code>old/docs/</code>)</h2>
+<p>2026-07-03 이전에는 <code>docs/*.md</code>가 원본이고 <code>tools/docs-to-html.js</code>(<code>docs-html-export</code> 스킬)로 <code>docs-html/</code>을 생성하는 구조였다. 지금은 그 산출물이 <code>docs/</code>로 승격되었고, 과거 md 원본은 <code>old/docs/</code>에 히스토리 보관 중이다. <code>docs-html-export</code> 스킬은 <code>old/docs/</code> 기준 재생성이 필요한 예외 상황에만 쓰는 보류 상태 도구로 남아있다.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>회의록 — 마을 개방 구조 (2026-07-03)</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<p><a href="../index.html">← 목차</a></p>
+<table class="meta"><tbody>
+<tr><th>date</th><td>2026-07-03</td></tr>
+<tr><th>topic</th><td>마을 개방 구조 (전면 개방 vs 순차 개방)</td></tr>
+<tr><th>status</th><td>확정 (사용자 승인 완료)</td></tr>
+<tr><th>related</th><td><a href="../risks.html">../risks.html</a> #2, <a href="../pre-production-checklist.html">../pre-production-checklist.html</a> #1, <a href="../systems/villages.html">../systems/villages.html</a>, <a href="../story/plot-hooks.html">../story/plot-hooks.html</a>, <a href="../systems/adventure-combat.html">../systems/adventure-combat.html</a>, <a href="../format/game-format-tbd.html">../format/game-format-tbd.html</a></td></tr>
+</tbody></table>
+<main>
+<h1>회의록 — 마을 개방 구조</h1>
+
+<h2>안건</h2>
+<p>초반부터 지도 전체가 물리적으로 열려있어야 하는지(야숨식) vs 스토리에 따라 마을이 순차적으로 개방되어야 하는지. docs/risks.html 리스크 #2이자 착수 전 체크리스트 최우선 항목.</p>
+
+<h2>참가</h2>
+<ul>
+<li>game-designer — 철학 정합성/총괄</li>
+<li>narrative-writer — 서사/마을 간 연결</li>
+<li>systems-designer — 밸런싱/난이도 곡선</li>
+<li>technical-advisor — 구현/세이브 구조</li>
+<li>scope-reviewer — 스코프 비관적 검토</li>
+</ul>
+<p>5개 에이전트를 병렬로 소집, 동일한 리서치 브리핑을 제공하고 각자 관점의 추천안과 다른 관점과의 충돌 지점을 명시하도록 요청. 오케스트레이션(회의 진행/종합)은 메인 세션이 수행.</p>
+
+<h2>리서치 브리핑 (웹 조사)</h2>
+<ul>
+<li><strong>젤다의 전설 야숨(BOTW)</strong>: 개발진(GDC 2017 "Breaking Conventions with BOTW")은 전통적 진행 게이트를 제거하고 "삼각형 법칙"(지형으로 시야를 자연스럽게 제한/유도, 랜드마크가 빵부스러기 역할)과 위험 신호(적 배치, 투명벽 없음)로 유도. 초기 플레이테스트에서 유도 없이는 80%가 억지로 정해진 순서를 따르고 20%만 자유 탐험했으나, 랜드마크 기반 유도 후 대부분이 "자유롭게 탐험한다고 느끼며" 의도된 목적지에 도달. 출처(WebFetch로 원문 확인, 신뢰도 높음): <a href="https://gmtk.substack.com/p/how-nintendo-solved-zeldas-open-world">gmtk.substack.com</a>, <a href="https://www.gamedeveloper.com/design/5-design-lessons-learned-from-i-the-legend-of-zelda-breath-of-the-wild-i-">gamedeveloper.com</a></li>
+<li><strong>룬팩토리4</strong>: 명시적 하드 스토리 게이트 — 특정 보스(Rafflesia) 처치 후 "Heaven's Gate" 개방, 특정 던전(Sharance Maze)은 2차 스토리 아크 완료 후 개방. 전형적 자물쇠-열쇠 구조. 출처(WebSearch 결과 요약, 신뢰도 중간): <a href="https://www.neoseeker.com/rune-factory-4/walkthrough">neoseeker.com</a></li>
+<li><strong>농장+모험 하이브리드 장르의 언락 인센티브</strong>: 최근 장르 리뷰에서 "항상 새로 열리는 지역이 있다"는 점이 몰입 유지 요인으로 언급됨. <em>주의: 이 항목은 WebSearch 스니펫 종합이며 개별 기사를 WebFetch로 확인하지 않음 — 신뢰도 낮음, 참고 수준으로만 사용.</em></li>
+</ul>
+
+<h2>각 에이전트 입장</h2>
+<table>
+<thead><tr><th>에이전트</th><th>추천</th><th>핵심 근거</th></tr></thead>
+<tbody>
+<tr><td>game-designer</td><td>물리적 전면 개방 + 유도 레이어 (하이브리드)</td><td>CLAUDE.md 철학 2번이 이미 하드 게이트를 배제함 — 3자택일이 아니라 철학이 배제한 선택지가 있는 문제</td></tr>
+<tr><td>narrative-writer</td><td>전면 개방 + 공통 빌런 파편 구조</td><td>"흩어진 힘을 모아 고향을 재건"류 동기부여 장치로 순회의 이유와 공통 서사를 동시에 해결. 엔딩은 공통 수렴 + 에필로그만 분기</td></tr>
+<tr><td>systems-designer</td><td>전면 개방 + 연성 난이도 곡선</td><td>특산물 유무에 따른 데미지/소모량 배율(가안: ×1.5~2.0 / ×2)로 자물쇠 대신 그라디언트 구현. 노숙=안전망, 컴패니언=대체 완화재</td></tr>
+<tr><td>technical-advisor</td><td>(정책과 분리) 씬 기반 구조 + 파생값 잠금</td><td>엔진 미정 상태에서 "개방 정책"과 "기술 구현"을 분리 — 잠금 여부를 세이브에 별도 저장 않고 계산값으로 둬서 정책을 나중에 바꿔도 마이그레이션 비용 없음</td></tr>
+<tr><td>scope-reviewer</td><td>MVP는 순차/완화, 전면개방 설계는 유보</td><td>BOTW식 유도는 대형 스튜디오급 튜닝이 전제 — 팀 규모 미정인 지금 어설프게 따라하면 초반 이탈 리스크. 마을 수 확정 전 전면개방을 못박으면 스코프 선제 확장</td></tr>
+</tbody>
+</table>
+
+<h2>충돌 지점 (숨기지 않고 기록)</h2>
+<ul>
+<li><strong>철학 3인 vs scope-reviewer</strong>: game-designer/narrative-writer/systems-designer는 "전면개방+연성유도"로 수렴했지만, scope-reviewer는 이를 정면 반박 — 정교한 유도 시스템은 팀 규모/리소스가 확인되기 전엔 시기상조라는 입장. 합의된 것이 아니라 실제 이견임.</li>
+<li><strong>narrative-writer 내부 트레이드오프</strong>: 전면개방+파편구조는 방문 순서 무관 일관성을 위해 플래그 기반 대사 분기가 늘어나 대사 스코프가 커짐 — scope-reviewer가 견제할 지점으로 narrative-writer 스스로 인지하고 "최소 플래그 언급" 수준 제한을 자체 제안.</li>
+<li><strong>technical-advisor가 유일하게 실질적 가교 역할</strong>: "정책"과 "구현"을 분리하는 제안이 철학 3인과 scope-reviewer 사이의 긴장을 해소 — 지금은 보수적으로 시작해도 나중에 비용 없이 정책 전환 가능하다는 점에서 "지금 전면개방을 안 박아야 한다"는 scope-reviewer의 우려를 완화.</li>
+</ul>
+
+<h2>종합 추천 (메인 세션 종합, 사용자 승인 완료)</h2>
+<ol>
+<li><strong>아키텍처는 지금 확정</strong>: 맵은 씬 단위로 분리(엔진 무관, 가역적). "마을 잠금 여부"는 세이브에 별도 저장하지 않고 다른 상태값에서 파생되는 계산값으로 처리 — 정책 전환 시 세이브 마이그레이션 불필요.</li>
+<li><strong>정책은 단계적으로</strong>: MVP(마을 1~2개) 단계에서는 하드 게이트 없이 지형은 전부 열되, BOTW식 정교한 지형/랜드마크 유도는 만들지 않고 약한 인센티브(퀘스트를 하면 이후 이동이 편해지는 정도, 강제 아님)만 둔다. 이는 철학 위반이 아니다 — 없앤 것은 "비싼 폴리싱"이지 "자유도"가 아니다.</li>
+<li><strong>확장팩 시점(마을 3개 이상)</strong>에 BOTW식 정교한 유도 설계(지형/랜드마크)에 투자한다.</li>
+<li><strong>서사</strong>는 narrative-writer의 공통 빌런 파편 구조를 채택, 엔딩은 공통 수렴 + 에필로그만 분기.</li>
+<li><strong>밸런싱</strong>은 systems-designer의 수치 가안(특산물 미보유 시 데미지 ×1.5~2.0, 회복 소모 ×2)을 1차 추정치로 채택, 반복 테스트 전제.</li>
+</ol>
+
+<h2>사용자 최종 결정</h2>
+<p>2026-07-03, 사용자가 "그 방향으로 확정"을 승인. 반영 문서: docs/risks.html #2, docs/systems/villages.html, docs/story/plot-hooks.html, docs/systems/adventure-combat.html, docs/format/game-format-tbd.html, docs/pre-production-checklist.html #1.</p>
+</main>
+</body>
+</html>

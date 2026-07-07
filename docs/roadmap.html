@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>개발 마일스톤/일정 (뼈대 — 미확정)</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<p><a href="index.html">← 목차</a></p>
+<table class="meta"><tbody>
+<tr><th>status</th><td>draft</td></tr>
+<tr><th>owner_agent</th><td>scope-reviewer</td></tr>
+</tbody></table>
+<main>
+<h1>개발 마일스톤/일정 (뼈대 — 미확정)</h1>
+<p>일반 게임 기획 제안서의 표준 목차 항목 중 하나로 신설. 아직 실제 일정/인력 정보가 없어 구조만 제시하며, 임의로 기간·인력을 확정하지 않는다.</p>
+<h2>제안 마일스톤 구조 (옵션 — 확정 아님)</h2>
+<table>
+<thead><tr><th>단계</th><th>목표</th><th>포함 범위(안)</th><th>산출물</th></tr></thead>
+<tbody>
+<tr><td>M0. 컨셉 검증</td><td>핵심 루프(농장+모험 왕복)가 재미있는지 확인</td><td><strong>마을1(튜토리얼, 개간형 홈스테드) 단독</strong>, 보스 1종, 최소 농사 루프 — 계절/기후 분리 레이어·농장 3단계 체계 등 후속 시스템은 이 단계에서 만들지 않음</td><td>플레이 가능한 버티컬 슬라이스</td></tr>
+<tr><td>M1. MVP</td><td>M0에서 "재밌다" 검증된 후, 마을2/3 및 관련 시스템(계절-기후 분리, 홈스테드 세부 규칙) 확정·완결</td><td>정착/결혼 제외, 대여 농장까지만</td><td>플레이테스트용 빌드</td></tr>
+<tr><td>M2. 정식 출시</td><td>MVP 마을 + 정착/결혼/엔딩</td><td>전체 루프 완성</td><td>출시 빌드</td></tr>
+<tr><td>M3. 확장팩</td><td>나머지 마을 추가</td><td>신규 마을별 세트(작물/던전/NPC)</td><td>DLC/업데이트</td></tr>
+</tbody>
+</table>
+<h2>확정된 사항</h2>
+<ul>
+<li><strong>팀 규모</strong>: 1인 개발, 코딩 가능 (2026-07-03 확정). 엔진/전투 조작 등 다른 결정의 전제가 됨 — <a href="meetings/2026-07-03-engine-combat-platform.html">회의록</a> 참고. 다만 이 정보를 바탕으로 한 단계별 기간 추정치는 아직 산출되지 않음(아래 미확정 항목 참고).</li>
+<li><strong>개발 시퀀싱</strong> (2026-07-07 확정, <a href="meetings/2026-07-07-mvp-village-concept-and-sequencing.html">회의록</a>): 최종 비전은 마을 최소 3개(~10시간/마을)이지만, <strong>실제로 지금 만드는 것은 마을1 코어 루프(농장+가벼운 모험 한 조각)뿐</strong>. 계절-기후 분리 레이어, 농장 3단계(대여/튜토리얼 홈스테드/정식 정착) 체계, 마을2·3 구체 컨텐츠는 마을1이 실제로 재밌다고 검증되기 전까지 "제안" 상태로만 문서에 남기고 구현 착수하지 않는다. 스코프가 여러 세션에 걸쳐 누적된 것을 사용자가 스스로 우려를 표하면서 나온 결정 — scope-reviewer가 처음부터 권고했던 "마을 1개 우선 검증"과 결과적으로 일치.</li>
+</ul>
+<h2>미확정 — 상의 필요</h2>
+<ul>
+<li>1인 개발이 확정됐으니 이를 반영한 단계별 소요 기간 추정치 산출 필요</li>
+<li>M0(마을1 버티컬 슬라이스) 통과 기준을 무엇으로 볼지(플레이테스트 피드백? 자체 판단?) — 아직 정의 안 됨</li>
+<li>확장팩 단위를 마을 1개씩으로 쪼갤지, 2개씩 묶을지</li>
+</ul>
+<h2>다음 작업 후보</h2>
+<ul>
+<li>리소스(인력/예산/기간) 정보가 확보되면 각 마일스톤에 기간 추정치 부여 (scope-reviewer + game-designer)</li>
+</ul>
+</main>
+</body>
+</html>

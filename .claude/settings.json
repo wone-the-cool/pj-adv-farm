@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Read",
+      "Edit",
+      "Write",
+      "Glob",
+      "Grep",
+      "Bash(cd *)",
+      "Bash(ls *)",
+      "Bash(mkdir *)",
+      "Bash(go build:*)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git status*)",
+      "Bash(git log*)",
+      "Bash(git diff*)",
+      "Bash(git checkout -b *)",
+      "Bash(docker ps*)",
+      "Bash(ls:*)",
+      "Bash(grep *)",
+      "Bash(git config:*)",
+      "Bash(go vet *)",
+      "Bash(echo *)",
+      "Read(/*)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(sudo *)",
+      "Bash(git push origin main*)",
+      "Bash(git push --force*)",
+      "Bash(git reset --hard*)",
+      "Read(./.env)"
+    ]
+  },
+  "model": "sonnet",
+  "MAX_THINKING_TOKENS": 10000,
+  "CLAUDE_CODE_SUBAGENT_MODEL": "haiku",
+  "hooks": {
+  }
+}

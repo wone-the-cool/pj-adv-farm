@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>리스크 관리 표</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<p><a href="index.html">← 목차</a></p>
+<table class="meta"><tbody>
+<tr><th>status</th><td>living-document</td></tr>
+<tr><th>owner_agent</th><td>scope-reviewer</td></tr>
+</tbody></table>
+<main>
+<h1>리스크 관리 표</h1>
+<p>CLAUDE.md "알려진 리스크 및 미해결 과제" 상세본. scope-reviewer 에이전트가 신규 제안마다 이 표를 참조/갱신한다.</p>
+<table>
+<thead><tr><th>#</th><th>리스크</th><th>설명</th><th>영향도</th><th>관련 문서</th><th>상태</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>스코프 과다</td><td>마을 3~5개 × 고유 작물/NPC/던전/결혼 시스템은 개발 규모가 매우 큼</td><td>높음 (프로젝트 완주 자체를 위협)</td><td>docs/roadmap.html, docs/systems/villages.html</td><td>미해결 — 초기 스코프 축소 전략 필요</td></tr>
+<tr><td>2</td><td>마을 개방 구조</td><td>초반 전체 개방 vs 순차 개방. 아키텍처(씬 분리+파생값 잠금)는 확정, 정책은 MVP 단계적 완화 후 확장팩에서 정교화</td><td>높음 (다른 다수 시스템 설계에 선행 조건)</td><td>docs/systems/villages.html, <a href="meetings/2026-07-03-village-opening-structure.html">회의록</a></td><td>확정 (2026-07-03)</td></tr>
+<tr><td>3</td><td>보스 난이도 밸런싱</td><td>"특산물 없이도 클리어 가능하되 훨씬 어려움" 구조의 실제 수치 밸런싱</td><td>중간 (반복 테스트로 점진 해결 가능)</td><td>docs/systems/adventure-combat.html</td><td>미해결 — 테스트 필요</td></tr>
+<tr><td>4</td><td>노숙 시스템 페이스</td><td>필수처럼 느껴지지 않으면서도 매력적인 선택지가 되도록 인센티브 설계</td><td>중간</td><td>docs/systems/time-camping.html</td><td>미해결</td></tr>
+<tr><td>5</td><td>결혼 후 콘텐츠 부재 위험</td><td>스타듀밸리의 대표적 비판 지점 반복 방지</td><td>중간 (장기 리텐션에 영향)</td><td>docs/systems/romance-companion.html</td><td>완화 방향 제안됨 (2026-07-07, 이중 레이어: 마을평판+개별호감도) — 구체 이벤트 설계는 미완료, 마을 간 요소는 M1+ 대상</td></tr>
+</tbody>
+</table>
+<h2>표 사용 규칙</h2>
+<ul>
+<li>새 리스크 발견 시 이 표에 행을 추가한다 (임의로 CLAUDE.md에 직접 추가하지 않음).</li>
+<li>"상태"는 game-designer/scope-reviewer가 논의 후에만 "완화" 또는 "확정"으로 갱신한다.</li>
+<li>항목이 실제로 해결/확정되면 관련 docs/ 파일에 결정 사항을 반영하고 이 표의 상태를 갱신한다.</li>
+</ul>
+</main>
+</body>
+</html>

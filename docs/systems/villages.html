@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>마을/지역 상세 (CLAUDE.md "핵심 시스템 1" 상세본)</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<p><a href="../index.html">← 목차</a></p>
+<table class="meta"><tbody>
+<tr><th>status</th><td>draft</td></tr>
+<tr><th>related</th><td><a href="../story/plot-hooks.html">../story/plot-hooks.html</a>, <a href="../risks.html">../risks.html</a>, <a href="romance-companion.html">romance-companion.html</a></td></tr>
+</tbody></table>
+<main>
+<h1>마을/지역 상세 (CLAUDE.md "핵심 시스템 1" 상세본)</h1>
+<p>CLAUDE.md의 "1. 지역/마을 구조" 요약 표를 상세화한 문서. 마을별 시놉시스/캐릭터 시트는 각 마을 하위 섹션이 커지면 <code>docs/villages/&lt;마을명&gt;.md</code>로 추가 분리한다.</p>
+<h2>마을 후보 (구 초안 — 2026-07-07 신규 방향으로 대체됨, 히스토리 참고용)</h2>
+<table>
+<thead><tr><th>마을</th><th>고유 작물</th><th>가공품</th><th>던전 테마</th><th>결혼 가능 NPC 계열</th><th>개발 우선순위</th></tr></thead>
+<tbody>
+<tr><td>사막 오아시스</td><td>마력 선인장</td><td>마법 염료</td><td>고대 유적</td><td>상인 계열</td><td>미정</td></tr>
+<tr><td>설원 산악</td><td>서리 열매</td><td>얼음 조각 장비</td><td>얼음 동굴</td><td>대장장이 계열</td><td>미정</td></tr>
+<tr><td>숲속 정령</td><td>정령 버섯</td><td>치유 물약</td><td>태고의 숲</td><td>정령사 계열</td><td>미정</td></tr>
+<tr><td>해안 어촌</td><td>해조류</td><td>(미정)</td><td>심해 유적</td><td>(미정)</td><td>미정</td></tr>
+</tbody>
+</table>
+<h2>제안된 3마을 컨셉 (2026-07-07, <a href="../meetings/2026-07-07-mvp-village-concept-and-sequencing.html">회의록</a> — 마을1 버티컬 슬라이스 검증 전까지는 "제안" 상태, 확정 아님)</h2>
+<p>사용자가 직접 지정한 방향: 최소 3마을, 마을당 평균 플레이타임 ~10시간 목표. 실제 구현은 마을1부터 순차 진행하며, 마을2/3 세부는 마을1 검증 후 확정한다.</p>
+<table>
+<thead><tr><th>마을</th><th>컨셉</th><th>고유 자원</th><th>가공품</th><th>던전 테마</th><th>결혼 NPC 계열</th></tr></thead>
+<tbody>
+<tr><td>1. 이슬터(가칭)</td><td>튜토리얼, 봄/평지, 개간 전(잡초·돌·그루터기) 튜토리얼 홈스테드</td><td>새싹밀</td><td>갓 구운 빵/에일</td><td>잡초 밑 매몰 유적</td><td>농부/장인 계열</td></tr>
+<tr><td>2. 다래계곡(가칭)</td><td>열대/여름, 계곡 채집·낚시 (스타듀밸리 진저섬 참고)</td><td>불꽃과실, 바나나/망고 등 열대 작물</td><td>과실주/잼</td><td>정글 신전 + 온천 동굴</td><td>채집꾼·약초치유사 계열</td></tr>
+<tr><td>3. 청파나루(가칭)</td><td>대서양/여름, 바다낚시·통발·해변 조개/산호 채집 (기존 "해안 어촌" 통합)</td><td>해조류, 조개, 산호</td><td>훈제어물/진주세공품</td><td>심해 유적</td><td>뱃사람·항해사 계열</td></tr>
+</tbody>
+</table>
+<h2>확정된 사항</h2>
+<ul>
+<li><strong>마을 개방 구조</strong> (2026-07-03 확정, <a href="../meetings/2026-07-03-village-opening-structure.html">회의록</a>): 아키텍처는 씬 단위 분리 + "잠금 여부"는 세이브에 별도 저장하지 않고 다른 상태값에서 파생되는 계산값으로 처리 (정책 전환 시 마이그레이션 불필요). 정책은 물리적으로 전부 열되 정교한 지형 유도는 만들지 않고 약한 인센티브만 두며, 마을 수가 늘어나는 확장팩 시점에 BOTW식 정교한 유도 설계(지형/랜드마크)에 투자한다.</li>
+<li><strong>MVP 마을 수/개발 시퀀싱</strong> (2026-07-07 확정, <a href="../meetings/2026-07-07-mvp-village-concept-and-sequencing.html">회의록</a>): 비전은 최소 3마을(위 표)이지만, 실제 구현은 마을1(이슬터) 버티컬 슬라이스부터 — 재밌다고 검증된 후 마을2/3을 확정 진행한다. 해안 어촌 컨셉은 마을3(청파나루)으로 흡수, 가공품/결혼계열 공백 해소됨.</li>
+</ul>
+<h2>미확정 — 상의 필요</h2>
+<ul>
+<li>마을1 버티컬 슬라이스 통과 기준 (docs/roadmap.html 참고)</li>
+<li>마을2/3 구체 밸런싱 수치(가격/희귀도) — systems-designer, M1 단계에서</li>
+<li>마을2/다래계곡·마을3/청파나루 메커닉 차별화(능동 낚시 미니게임 vs 크랩팟 방치형)의 구체 스펙</li>
+</ul>
+<h2>다음 작업 후보</h2>
+<ul>
+<li>마을별 시놉시스 초안 (narrative-writer 에이전트 활용 권장) → <code>docs/villages/&lt;이름&gt;.md</code>로 분리</li>
+<li>마을별 밸런싱 수치(작물 가격/희귀도) → systems-designer 에이전트, xlsx 스킬 활용</li>
+</ul>
+</main>
+</body>
+</html>

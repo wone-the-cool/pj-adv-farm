@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>프로젝트 착수 전 체크리스트 (히스토리 관리)</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<p><a href="index.html">← 목차</a></p>
+<table class="meta"><tbody>
+<tr><th>status</th><td>living-document</td></tr>
+<tr><th>owner_agent</th><td>open-question-facilitator</td></tr>
+<tr><th>created</th><td>2026-07-03</td></tr>
+<tr><th>last_updated</th><td>2026-07-07</td></tr>
+<tr><th>related</th><td><a href="risks.html">risks.html</a>, <a href="roadmap.html">roadmap.html</a>, <a href="meetings/README.html">meetings/</a></td></tr>
+</tbody></table>
+<main>
+<h1>프로젝트 착수 전 체크리스트 (히스토리 관리)</h1>
+<p>이 문서는 <strong>히스토리 기록용</strong>이다. 상태를 바꿀 때 표의 "상태"만 고치고 끝내지 말고, 반드시 하단 "변경 이력"에 날짜와 함께 append한다 (과거 이력 삭제 금지).</p>
+<h2>상태 값 정의</h2>
+<p><code>미착수</code> / <code>진행중</code> / <code>완료</code> / <code>보류</code></p>
+<h2>체크리스트</h2>
+<table>
+<thead><tr><th>ID</th><th>분류</th><th>항목</th><th>우선순위</th><th>상태</th><th>참고 문서</th><th>최초 등록일</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>핵심 설계 결정</td><td>마을 개방 구조 (전체개방 vs 순차개방)</td><td>최우선</td><td>완료</td><td>docs/risks.html #2, docs/systems/villages.html, <a href="meetings/2026-07-03-village-opening-structure.html">meetings/</a></td><td>2026-07-03</td></tr>
+<tr><td>2</td><td>핵심 설계 결정</td><td>초기 스코프 마을 수/선정 (최소 3개로 확정, 세부는 마을1 검증 후)</td><td>최우선</td><td>진행중</td><td>docs/systems/villages.html, docs/roadmap.html, <a href="meetings/2026-07-07-mvp-village-concept-and-sequencing.html">meetings/</a></td><td>2026-07-03</td></tr>
+<tr><td>3</td><td>핵심 설계 결정</td><td>보스 난이도 밸런싱 방향</td><td>병행 가능</td><td>진행중</td><td>docs/systems/adventure-combat.html, <a href="meetings/2026-07-03-village-opening-structure.html">meetings/</a></td><td>2026-07-03</td></tr>
+<tr><td>4</td><td>핵심 설계 결정</td><td>노숙 시스템 페이스</td><td>병행 가능</td><td>미착수</td><td>docs/systems/time-camping.html</td><td>2026-07-03</td></tr>
+<tr><td>5</td><td>핵심 설계 결정</td><td>결혼 후 콘텐츠 설계</td><td>출시 전까지</td><td>미착수</td><td>docs/systems/romance-companion.html</td><td>2026-07-03</td></tr>
+<tr><td>6</td><td>스토리 확정</td><td>메인 플롯 동기부여 장치</td><td>최우선</td><td>완료</td><td>docs/story/plot-hooks.html, <a href="meetings/2026-07-03-village-opening-structure.html">meetings/</a></td><td>2026-07-03</td></tr>
+<tr><td>7</td><td>스토리 확정</td><td>마을 간 서사 연결 (옴니버스 vs 공통 빌런)</td><td>최우선</td><td>완료</td><td>docs/story/plot-hooks.html, <a href="meetings/2026-07-03-village-opening-structure.html">meetings/</a></td><td>2026-07-03</td></tr>
+<tr><td>8</td><td>스토리 확정</td><td>엔딩 분기 구조</td><td>최우선</td><td>완료</td><td>docs/story/plot-hooks.html, <a href="meetings/2026-07-03-village-opening-structure.html">meetings/</a></td><td>2026-07-03</td></tr>
+<tr><td>9</td><td>스토리 확정</td><td>회수 안 된 마을 콘텐츠 처리</td><td>병행 가능</td><td>진행중</td><td>docs/story/plot-hooks.html</td><td>2026-07-03</td></tr>
+<tr><td>10</td><td>게임 형식/기술</td><td>엔진 선택 (유니티/갓엇 등)</td><td>최우선</td><td>완료</td><td>docs/format/game-format-tbd.html, <a href="meetings/2026-07-03-engine-combat-platform.html">meetings/</a></td><td>2026-07-03</td></tr>
+<tr><td>11</td><td>게임 형식/기술</td><td>그래픽 스타일 (도트 밀도/캐릭터 비율)</td><td>최우선</td><td>미착수</td><td>docs/format/game-format-tbd.html, docs/art/mood-board.html</td><td>2026-07-03</td></tr>
+<tr><td>12</td><td>게임 형식/기술</td><td>전투 조작 방식 (단순 액션 vs 콤보)</td><td>최우선</td><td>완료</td><td>docs/format/game-format-tbd.html, docs/systems/adventure-combat.html, <a href="meetings/2026-07-03-engine-combat-platform.html">meetings/</a></td><td>2026-07-03</td></tr>
+<tr><td>13</td><td>게임 형식/기술</td><td>세이브 데이터 구조</td><td>최우선</td><td>진행중</td><td>docs/format/game-format-tbd.html, <a href="meetings/2026-07-03-village-opening-structure.html">meetings/</a></td><td>2026-07-03</td></tr>
+<tr><td>14</td><td>비즈니스/시장</td><td>타겟 플랫폼/유저층</td><td>최우선</td><td>진행중</td><td>docs/business/target-market.html, <a href="meetings/2026-07-03-engine-combat-platform.html">meetings/</a></td><td>2026-07-03</td></tr>
+<tr><td>15</td><td>비즈니스/시장</td><td>경쟁작 실제 리서치</td><td>병행 가능</td><td>미착수</td><td>docs/business/competitor-analysis.html</td><td>2026-07-03</td></tr>
+<tr><td>16</td><td>비즈니스/시장</td><td>가격/DLC/과금 정책</td><td>후순위</td><td>미착수</td><td>docs/business/monetization.html</td><td>2026-07-03</td></tr>
+<tr><td>17</td><td>팀/리소스</td><td>팀 규모·1인 개발 여부 확정</td><td>최우선</td><td>완료</td><td>docs/roadmap.html</td><td>2026-07-03</td></tr>
+<tr><td>18</td><td>팀/리소스</td><td>MVP 마을 선정 기준 확정</td><td>최우선</td><td>진행중</td><td>docs/systems/villages.html, docs/roadmap.html, <a href="meetings/2026-07-07-mvp-village-concept-and-sequencing.html">meetings/</a></td><td>2026-07-03</td></tr>
+<tr><td>28</td><td>핵심 설계 결정</td><td>개발 시퀀싱 (마을1 버티컬 슬라이스 우선, 마을2/3·계절-기후 레이어는 검증 후)</td><td>최우선</td><td>완료</td><td>docs/roadmap.html, <a href="meetings/2026-07-07-mvp-village-concept-and-sequencing.html">meetings/</a></td><td>2026-07-07</td></tr>
+<tr><td>19</td><td>아트 레퍼런스</td><td>실제 무드보드 이미지 수집</td><td>병행 가능</td><td>미착수</td><td>docs/art/mood-board.html</td><td>2026-07-03</td></tr>
+<tr><td>20</td><td>법적/사업 준비</td><td>상표/저작권 유사성 점검</td><td>최우선</td><td>미착수</td><td>(미문서화)</td><td>2026-07-03</td></tr>
+<tr><td>21</td><td>법적/사업 준비</td><td>엔진 라이선스/로열티 정책 확인</td><td>엔진 확정 시</td><td>미착수</td><td>(미문서화)</td><td>2026-07-03</td></tr>
+<tr><td>22</td><td>법적/사업 준비</td><td>유통 플랫폼(Steam 등) 입점 요건 확인</td><td>출시 전</td><td>미착수</td><td>(미문서화)</td><td>2026-07-03</td></tr>
+<tr><td>23</td><td>법적/사업 준비</td><td>사업자 등록/정산 방식 검토</td><td>후순위</td><td>미착수</td><td>(미문서화)</td><td>2026-07-03</td></tr>
+<tr><td>24</td><td>개발 파이프라인</td><td>버전관리 저장소 초기화 (현재 git 저장소 아님, 확인됨)</td><td>최우선</td><td>미착수</td><td>(미문서화)</td><td>2026-07-03</td></tr>
+<tr><td>25</td><td>개발 파이프라인</td><td>프로젝트 관리/이슈 트래킹 도구 선정</td><td>병행 가능</td><td>미착수</td><td>docs/roadmap.html</td><td>2026-07-03</td></tr>
+<tr><td>26</td><td>개발 파이프라인</td><td>아트/사운드 에셋 저장 방식</td><td>엔진 확정 시</td><td>미착수</td><td>(미문서화)</td><td>2026-07-03</td></tr>
+<tr><td>27</td><td>플레이테스트 준비</td><td>테스터 모집/피드백 수집 계획</td><td>병행 가능</td><td>미착수</td><td>docs/playtest/ (생성 예정)</td><td>2026-07-03</td></tr>
+</tbody>
+</table>
+<h2>변경 이력</h2>
+<table>
+<thead><tr><th>날짜</th><th>ID</th><th>변경 내용</th><th>비고</th></tr></thead>
+<tbody>
+<tr><td>2026-07-03</td><td>전체(1~27)</td><td>체크리스트 최초 생성</td><td>기존 docs/risks.html, docs/roadmap.html, docs/story/, docs/format/, docs/business/, docs/art/ 종합 + 법적/파이프라인 항목 신규 추가</td></tr>
+<tr><td>2026-07-03</td><td>1, 6, 7, 8</td><td>완료로 갱신</td><td>5개 서브에이전트(game-designer/narrative-writer/systems-designer/technical-advisor/scope-reviewer) 브레인스토밍 + 웹 리서치 종합 후 사용자 승인. <a href="meetings/2026-07-03-village-opening-structure.html">회의록</a> 참고</td></tr>
+<tr><td>2026-07-03</td><td>3, 13</td><td>진행중으로 갱신</td><td>같은 회의에서 1차 가안(수치/세이브 스키마) 도출, 반복 테스트·엔진 확정 등 후속 필요</td></tr>
+<tr><td>2026-07-03</td><td>9</td><td>진행중으로 갱신</td><td>같은 회의에서 부분 힌트 도출(구조적으로 낭비 감소 + 짧은 클로징 권장), 구체 설계 미완료</td></tr>
+<tr><td>2026-07-03</td><td>10, 12, 17</td><td>완료로 갱신</td><td>엔진(Godot)/전투 조작(2버튼+무기 아키타입)/팀 규모(1인+코딩 가능) 확정. <a href="meetings/2026-07-03-engine-combat-platform.html">회의록</a> 참고</td></tr>
+<tr><td>2026-07-03</td><td>14</td><td>진행중으로 갱신</td><td>플랫폼(Steam 우선, 스위치 낮은 우선순위)만 확정, 타겟 연령/유저층·세션 길이 설계는 미해결</td></tr>
+<tr><td>2026-07-07</td><td>2, 18</td><td>미착수 → 진행중으로 갱신</td><td>사용자가 마을 최소 3개 + 구체 컨셉(튜토리얼/열대계곡/대서양)을 직접 제시, 4에이전트 브레인스토밍(1라운드)으로 매핑·충돌 검토, 이어서 계절-기후 양립 브레인스토밍(2라운드)까지 진행. 다만 사용자가 스코프 누적에 대한 우려를 표하며 3마을 세부는 "제안" 상태로만 남기고 확정 보류 — 완료 아님. <a href="meetings/2026-07-07-mvp-village-concept-and-sequencing.html">회의록</a> 참고</td></tr>
+<tr><td>2026-07-07</td><td>28</td><td>신규 추가, 완료로 등록</td><td>스코프 우려 대화(3라운드, 에이전트 스폰 없이 advisor 자문 포함)에서 나온 결정 — 비전(3마을)은 유지하되 실제 빌드는 마을1 버티컬 슬라이스부터. scope-reviewer가 반복 권고했던 방향과 결과적으로 일치. <a href="meetings/2026-07-07-mvp-village-concept-and-sequencing.html">회의록</a> 참고</td></tr>
+</tbody>
+</table>
+<h2>사용 규칙</h2>
+<ul>
+<li>상태를 바꿀 때마다: (1) 위 표의 "상태" 갱신 (2) "변경 이력"에 날짜+ID+변경 내용 append (3) 참고 문서에 연동된 원본(docs/risks.html 등)도 함께 갱신되었는지 확인.</li>
+<li>새 항목이 생기면 다음 ID 번호로 추가하고, 최초 등록일을 기록한다.</li>
+<li>이 문서 자체의 확정/미확정 여부와 무관하게, 항목 논의는 <code>resolve-open-questions</code> 스킬 또는 <code>open-question-facilitator</code> 에이전트로 진행하는 것을 권장한다.</li>
+</ul>
+</main>
+</body>
+</html>
