@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>초기 마비노기(G1~G3) 기획 철학 참고자료</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<p><a href="index.html">← 목차</a></p>
+<table class="meta"><tbody>
+<tr><th>status</th><td>reference (사용자 제공 자료, 2026-07-08 등록)</td></tr>
+<tr><th>owner_agent</th><td>game-designer, narrative-writer, systems-designer</td></tr>
+<tr><th>related</th><td><a href="story/plot-hooks.html">story/plot-hooks.html</a>, <a href="systems/farming-economy.html">systems/farming-economy.html</a>, <a href="systems/adventure-combat.html">systems/adventure-combat.html</a>, <a href="systems/time-camping.html">systems/time-camping.html</a>, <a href="design-reference-retention.html">design-reference-retention.html</a></td></tr>
+</tbody></table>
+<main>
+<h1>초기 마비노기(G1~G3) 기획 철학 참고자료</h1>
+<p>넥슨 마비노기 초기작(G1~G3, 엘프/자이언트 출시 시점까지)의 기획 철학을 분석해 이 프로젝트에 적용 가능한 형태로 정리한 사용자 제공 참고자료. "판타지 라이프" 슬로건이 시스템 차원에서 실제로 구현되어 있던 시기(2004~2006년경)의 설계 원칙에 초점.</p>
+
+<h2>원작 분석 요약</h2>
+<ul>
+<li><strong>무클래스 탤런트 + 단일 AP 시스템</strong>: 전투 재능과 생활 재능(요리/대장기술/재봉/채집/음악/상행)이 하나의 AP 풀·랭크업 시스템을 공유. 별도 직업 개념 없이 순수 생활형 캐릭터도 전투 캐릭터와 동등한 성장 곡선/존재감을 가짐 — "전투는 삶의 일부일 뿐, 특별한 상위 콘텐츠가 아니다"를 자원 시스템 자체로 구현.</li>
+<li><strong>종족-환경-서사의 결합(엘프/자이언트)</strong>: 신의 저주로 콘누스(엘프, 사막화)/피시스(자이언트, 설원화)가 형성됐다는 세계관이 종족별 스탯 성향, 마을 풍경, 날씨 시스템까지 관통. 환경→생존 문제→종족 서사→캐릭터 정체성이 하나의 인과 사슬.</li>
+<li><strong>제네레이션(G1~G3) 구조</strong>: 짧고 완결된 챕터 단위 + "무엇이 진정한 정의인가"를 계속 되묻는 도덕적 분기(팔라딘 vs 다크나이트 전향 등). 플레이어의 선택이 실제 정체성(스킬/전향)으로 이어짐.</li>
+<li><strong>반응형 액션 전투</strong>: 자동사냥 사실상 불가능, 예비동작을 보고 카운터/디펜스로 받아치는 구조.</li>
+<li><strong>생활 스킬의 "노동감"</strong>: 느린 랭크업, 제작 실패 확률 존재 — 편의성보다 "진짜 노동"에 가까운 체감을 의도적으로 유지.</li>
+<li><strong>마을/던전 디자인</strong>: 마을이 스토리 무대와 밀접 결합, 마을 이동 자체가 세계를 알아가는 여정. 던전은 정해진 경로+서사적 연출(컷신/보스 대사) 중심.</li>
+</ul>
+
+<h2>지금 트렌드와의 접점/충돌</h2>
+<ul>
+<li><strong>잘 맞는 지점</strong>: 선택이 시스템에 새겨지는 서사 통합형 설계, 짧고 완결된 챕터 단위 공개.</li>
+<li><strong>충돌 지점</strong>: 원작 특유의 높은 마찰(반응형 전투 난이도, 노동감, 느린 페이스)은 지금 유저의 마찰 관용도와 안 맞음 — 그대로 이식하면 이탈률 상승 위험. 전투/생활 완전 통합은 세그먼트별 리텐션 관리를 어렵게 함. 초반 "무명·수동적" 주인공 포지션은 파워판타지 기대 유저에게 이탈 지점 가능.</li>
+<li><strong>절충 원칙</strong>: "통합의 감성은 가져오되, 통합의 강제성은 버린다" — 전투/생활을 상호 보너스로 느슨하게 엮고, 도덕적 분기는 유지하되 결과가 파워 밸런스에 손해를 주지 않도록.</li>
+</ul>
+
+<h2>적용 가이드 요약</h2>
+<table>
+<thead><tr><th>원작 요소</th><th>적용 방향</th></tr></thead>
+<tbody>
+<tr><td>AP 통합(전투=생활)</td><td>농사↔모험 자원 순환 + 상호 보너스, 강제 결합 지양 — 순수 농사파/순수 모험파 모두 각자 루트로 완주 가능해야 함</td></tr>
+<tr><td>종족-환경-저주 서사</td><td>지역별 작물/기후에 세계관적 인과(저주/전설) 부여</td></tr>
+<tr><td>제네레이션 구조</td><td>짧고 완결된 챕터 + 도덕적 분기(파워 손해 없이)</td></tr>
+<tr><td>반응형 전투</td><td>일상은 자동화, 클라이맥스(보스)만 액션성 유지</td></tr>
+<tr><td>날씨·계절 순환</td><td>별도 트랙이 아닌 세계 순환의 일부로 통합, 서사 비트로 리텐션 견인</td></tr>
+</tbody>
+</table>
+<p><strong>핵심 원칙 한 줄 요약</strong>: 통합의 감성(전투와 생활이 하나의 삶이라는 감각)은 최대한 살리되, 통합의 강제성(자원 강제 결합, 높은 마찰, 손해 보는 선택)은 현재 유저 기대치에 맞게 완화한다.</p>
+
+<h2>이 프로젝트 현황 매핑 (2026-07-08 작성 시점 기준)</h2>
+<table>
+<thead><tr><th>항목</th><th>현황</th><th>근거/관련 문서</th></tr></thead>
+<tbody>
+<tr><td>AP 통합 → 농사↔모험 자원 순환</td><td>부분 반영(정신 자체는 CLAUDE.md 철학1과 동일하나, 구체적 재료/아이템 순환 체계는 미설계)</td><td><a href="systems/farming-economy.html">systems/farming-economy.html</a> — 갭</td></tr>
+<tr><td>종족-환경-저주 서사</td><td>제안 단계(빌런이 힘의 근원을 깨뜨리며 마을마다 정령이 흩어져 잠들었다는 로어와 유사한 결)</td><td><a href="systems/farming-economy.html">systems/farming-economy.html</a> "농장 자동화 2축", <a href="story/plot-hooks.html">story/plot-hooks.html</a> "핵심 줄거리 초안"</td></tr>
+<tr><td>제네레이션 구조(완결형 챕터+도덕적 분기)</td><td>부분 반영(마을=완결형 에피소드는 확정되어 있으나, 도덕적 분기는 없음 — 신규 검토 후보)</td><td><a href="story/plot-hooks.html">story/plot-hooks.html</a> — 갭</td></tr>
+<tr><td>반응형 전투(일상 자동화/클라이맥스만 액션)</td><td>정합성 높음 — 이미 2버튼 액션 전투 확정 + 농장 자동화 2축으로 일상 자동화 진행 중</td><td><a href="systems/adventure-combat.html">systems/adventure-combat.html</a>, <a href="systems/farming-economy.html">systems/farming-economy.html</a></td></tr>
+<tr><td>계절/날씨=세계 순환 일부로 통합</td><td>제안 단계와 정합 — "전역 캘린더+마을별 기후" 구조가 이미 이 방향</td><td><a href="systems/time-camping.html">systems/time-camping.html</a></td></tr>
+</tbody>
+</table>
+<h2>뚜렷한 갭 (신규 검토 후보, 마을1 검증 이후 — 지금 스코프 확장 안 함)</h2>
+<ul>
+<li>농사↔모험 자원 순환의 구체 아이템/재료 설계(버프 포션 재료, 몬스터 유인 미끼, 유적 진입 조건 등)</li>
+<li>도덕적 분기(농법 선택 등 정체성에 영향 주는 선택지) — 현재 전혀 없음, 도입 시 "파워 밸런스 손해 없음" 원칙 준수 필요</li>
+<li>생활 스킬 실패 확률 — 현재 <a href="../CLAUDE.md">CLAUDE.md</a>/[[feedback_no-punishing-failure]]의 실패 페널티 절대 금지 원칙과 정면 충돌하므로, 도입한다면 "실패=손실"이 아니라 "실패=시간 소모만" 수준으로 완화해야 함(그대로 이식 금지)</li>
+</ul>
+</main>
+</body>
+</html>

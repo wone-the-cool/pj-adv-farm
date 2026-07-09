@@ -68,9 +68,9 @@
 
 | 에이전트 | 역할 | 주로 참고하는 문서 |
 |---|---|---|
-| **game-designer** | 전체 기획 총괄, 시스템 간 상충 여부 검토, 디자인 철학 수호자 | 핵심 디자인 철학, docs/risks.html, docs/design-reference-retention.html |
-| **narrative-writer** | 스토리라인/퀘스트/마을별 서사, 대사, NPC 캐릭터성 설계 (스토리 기획 전문가) | docs/story/plot-hooks.html, docs/villages/ |
-| **systems-designer** | 전투, 농사, 경제, 밸런싱 등 수치/규칙 설계 | docs/systems/, docs/design-reference-retention.html |
+| **game-designer** | 전체 기획 총괄, 시스템 간 상충 여부 검토, 디자인 철학 수호자 | 핵심 디자인 철학, docs/risks.html, docs/design-reference-retention.html, docs/design-reference-mabinogi.html |
+| **narrative-writer** | 스토리라인/퀘스트/마을별 서사, 대사, NPC 캐릭터성 설계 (스토리 기획 전문가) | docs/story/plot-hooks.html, docs/villages/, docs/design-reference-mabinogi.html |
+| **systems-designer** | 전투, 농사, 경제, 밸런싱 등 수치/규칙 설계 | docs/systems/, docs/design-reference-retention.html, docs/design-reference-mabinogi.html |
 | **technical-advisor** | 실제 구현 관점(엔진 선택, 2D 렌더링, 세이브 구조 등) 조언 | docs/format/game-format-tbd.html |
 | **scope-reviewer** | 매 기능 추가 제안마다 "이거 스코프 초과 아닌지" 견제 (의도적으로 비관적 관점 유지) | docs/risks.html, docs/roadmap.html |
 | **open-question-facilitator** | `docs/` 전반의 "미확정 — 상의 필요" 항목을 모아 논의를 진행하고, 결론이 나면 문서까지 갱신 (검토만 하는 다른 에이전트와 달리 결정 반영까지 담당) | docs/risks.html 및 각 문서의 "미확정" 섹션 전체 |
