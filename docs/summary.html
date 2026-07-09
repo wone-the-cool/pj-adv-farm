@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>프로젝트 진행 요약 (living-document)</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<p><a href="index.html">← 목차</a></p>
+<table class="meta"><tbody>
+<tr><th>status</th><td>living-document</td></tr>
+<tr><th>owner_agent</th><td>game-designer</td></tr>
+<tr><th>last_updated</th><td>2026-07-09</td></tr>
+<tr><th>related</th><td><a href="pre-production-checklist.html">pre-production-checklist.html</a>, <a href="risks.html">risks.html</a>, <a href="roadmap.html">roadmap.html</a></td></tr>
+</tbody></table>
+<main>
+<h1>프로젝트 진행 요약</h1>
+<p>지금까지 여러 문서/회의록에 흩어진 결정 사항을 한눈에 보기 위한 요약본. 세부 근거·수치는 각 링크된 문서가 원본이며, 이 문서는 스냅샷이다 — 상충 시 원본 문서가 우선한다. 항목 추가/변경 시 "변경 이력"에 append.</p>
+
+<h2>1. 프로젝트 정체성</h2>
+<p>스타듀밸리(농장 경영) 근간 + 젤다 야숨(자유도 높은 순서 자유) + 룬팩토리(농장+모험+결혼) 결합. <strong>장르 정체성은 농장 경영이 메인</strong>, 모험/전투/결혼은 서브. 핵심 철학 4원칙(CLAUDE.md): (1) 농장↔모험 상호의존 (2) 순서의 자유이지 결과의 편법 허용 아님 — 자물쇠-열쇠 금지 (3) 강제 아닌 선택 가능한 인센티브(옵트인) (4) 스타듀밸리식 여유 페이스 유지.</p>
+
+<h2>2. 확정된 핵심 결정</h2>
+<table>
+<thead><tr><th>영역</th><th>결정</th><th>날짜</th><th>근거 문서</th></tr></thead>
+<tbody>
+<tr><td>엔진</td><td>Godot (MIT, 로열티 없음, 1인 개발 반복속도 우선)</td><td>2026-07-03</td><td><a href="format/game-format-tbd.html">format/game-format-tbd.html</a></td></tr>
+<tr><td>플랫폼</td><td>Steam(PC) 우선, 스위치 이식 가능성 낮음 — 콘솔 예산 미배정</td><td>2026-07-03</td><td><a href="format/game-format-tbd.html">format/game-format-tbd.html</a></td></tr>
+<tr><td>전투 조작</td><td>기본 2버튼(공격/회피) + 무기 아키타입(3~4종 상한, MVP 1~2종) 종속 특수버튼. 키보드+마우스로 전체 완결 필수</td><td>2026-07-03</td><td><a href="format/game-format-tbd.html">format/game-format-tbd.html</a></td></tr>
+<tr><td>맵/세이브 구조</td><td>씬 단위 분리, "마을 잠금 여부"는 별도 저장 없이 파생 계산값 처리 — 개방정책 변경 시 마이그레이션 불필요</td><td>2026-07-03</td><td><a href="format/game-format-tbd.html">format/game-format-tbd.html</a></td></tr>
+<tr><td>마을 개방 구조</td><td>물리적으로 전부 개방, 약한 인센티브만 배치 (BOTW식 정교한 지형 유도는 확장팩에서)</td><td>2026-07-03</td><td><a href="systems/villages.html">systems/villages.html</a></td></tr>
+<tr><td>메인 플롯</td><td>흩어진 파편(힘)을 모아 세계의 온전함을 되찾는 구조, 공통 빌런의 파편형(옴니버스 아님), 각 마을은 방문 순서 무관 완결 에피소드</td><td>2026-07-03</td><td><a href="story/plot-hooks.html">story/plot-hooks.html</a></td></tr>
+<tr><td>엔딩 구조</td><td>메인 서사는 공통 수렴, 정착 마을 선택은 에필로그(로맨스/정착 플레이버)만 분기</td><td>2026-07-03</td><td><a href="story/plot-hooks.html">story/plot-hooks.html</a></td></tr>
+<tr><td>보스 대면 톤</td><td>"처치"가 아니라 "정화/해방" — 빌런에 오염된 피해자 존재를 구하는 힐링물 정서. 정화 성공 시 파편 회수 → 농장 정령 해금(전투 보상 아닌 농장경영 보상)</td><td>2026-07-08</td><td><a href="systems/adventure-combat.html">systems/adventure-combat.html</a>, <a href="systems/farming-economy.html">systems/farming-economy.html</a></td></tr>
+<tr><td>농장 자동화 2축</td><td>정령(서사축, 파편 회수로 해금) / 고용 인부(경제축) 이중 구조</td><td>2026-07-07</td><td><a href="systems/farming-economy.html">systems/farming-economy.html</a></td></tr>
+<tr><td>결혼/NPC 관계</td><td>이성애 전용 + 플레이어 성별 선택 가능, 명시적 트리거 기반 옵트인 호감도. 결혼 후 콘텐츠 공백 위험 완화안(마을평판+개별호감도 이중 레이어) 제안됨</td><td>2026-07-07</td><td><a href="systems/romance-companion.html">systems/romance-companion.html</a></td></tr>
+<tr><td>MVP 개발 시퀀싱</td><td>비전은 최소 3마을(이슬터/다래계곡/청파나루, 마을당 ~10시간)이나, 실제 구현은 <strong>마을1(이슬터) 버티컬 슬라이스부터</strong> — 재미 검증 전까지 마을2/3·계절-기후 분리 레이어는 "제안"에 머무름</td><td>2026-07-07</td><td><a href="roadmap.html">roadmap.html</a>, <a href="systems/villages.html">systems/villages.html</a></td></tr>
+<tr><td>팀 규모</td><td>1인 개발, 코딩 가능</td><td>2026-07-03</td><td><a href="roadmap.html">roadmap.html</a></td></tr>
+<tr><td>버전관리/배포</td><td>git 저장소 초기화 + GitHub(wone-the-cool/pj-adv-farm) 연동, GitHub Pages로 docs/ 정적 사이트 공개(https://wone-the-cool.github.io/pj-adv-farm/)</td><td>2026-07-07 / 2026-07-09</td><td>(문서화 안 됨 — 인프라 작업)</td></tr>
+</tbody>
+</table>
+
+<h2>3. 진행 중 — 마을1 "이슬터" 버티컬 슬라이스</h2>
+<ul>
+<li>시놉시스 초안 작성됨: 시작의 마을 컨셉, 개간 전 튜토리얼 홈스테드, 유적 보스 정화 시 농장 정령 각성(파편 회수와 직결) — <a href="villages/이슬터.html">villages/이슬터.html</a></li>
+<li>NPC 구성(총 10인), 여관집 딸/용병 웨이포인트 캐릭터 등 확정 반영됨.</li>
+<li>남은 미확정: 유적 디버프 수치, 결혼후보/컴패니언 풀 중첩 여부, 홈스테드 크기·정착전환 규칙, 마을명 최종 확정("이슬터"는 가칭), 미정착 시 서브플롯 매듭(M1+로 미룸).</li>
+</ul>
+
+<h2>4. 스토리 심화 초안 — 아직 미확정 (보류 상태)</h2>
+<p><a href="story/plot-hooks.html">story/plot-hooks.html</a>에 프롤로그/주인공 출신/에필로그 옵션 초안이 작성되어 있으나, 사용자가 "일단 보류"로 결정 보류 중. 주요 옵션 축: (1) 핵심 줄거리 4단계 초안 (2) 주인공 출신 — 이세계 외부인 vs 세계 내부의 자각 없는 특별한 존재(기억상실형/의미불명형) (3) 에필로그는 반드시 농장경영이 핵심 맥락이어야 한다는 원칙 하의 옵션 정렬.</p>
+
+<h2>5. 참고자료로 등록된 외부 분석</h2>
+<ul>
+<li><a href="design-reference-retention.html">design-reference-retention.html</a> (2026-07-07): 장르 불문 리텐션 공식 + 농장경영 특화 10덕목 체크리스트. 뚜렷한 갭: 수집욕 콘텐츠, 커스터마이징, 변동보상, 세션 유연성, 게임 필/주스 — 모두 마을1 검증 이후 검토 후보.</li>
+<li><a href="design-reference-mabinogi.html">design-reference-mabinogi.html</a> (2026-07-08): 초기 마비노기(G1~G3) AP통합/종족-환경-저주서사/제네레이션구조/반응형전투/생활노동감 분석. 절충 원칙 = "통합의 감성은 가져오되 통합의 강제성은 버린다". 뚜렷한 갭: 농사↔모험 자원 순환 구체 아이템, 도덕적 분기(파워 손해 없는 형태로), 생활스킬 실패확률(이 프로젝트의 실패 페널티 절대금지 원칙과 충돌하므로 도입 시 "시간 소모만" 수준으로 완화 필요) — <strong>도덕적 분기 구체화는 다음 세션 재개 예정 작업</strong>.</li>
+</ul>
+
+<h2>6. 미해결 리스크 (요약 — 상세는 <a href="risks.html">risks.html</a>)</h2>
+<ol>
+<li>스코프 과다 (마을 3~5개 × 시스템 조합) — 미해결, 마을1 우선 검증으로 완화 중</li>
+<li>보스 난이도 밸런싱 — 미해결, 반복 테스트 필요</li>
+<li>노숙 시스템 페이스 — 미해결</li>
+<li>결혼 후 콘텐츠 부재 위험 — 완화 방향 제안됨, 구체 이벤트 설계는 미완료</li>
+</ol>
+
+<h2>변경 이력</h2>
+<table>
+<thead><tr><th>날짜</th><th>변경 내용</th></tr></thead>
+<tbody>
+<tr><td>2026-07-09</td><td>최초 생성 — CLAUDE.md, docs/risks.html, docs/roadmap.html, docs/systems/*, docs/story/plot-hooks.html, docs/design-reference-*.html, docs/pre-production-checklist.html 종합</td></tr>
+</tbody>
+</table>
+</main>
+</body>
+</html>
