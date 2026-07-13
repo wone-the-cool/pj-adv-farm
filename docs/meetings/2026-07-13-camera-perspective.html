@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>회의록 — 시점/카메라 (2026-07-13)</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<p><a href="../index.html">← 목차</a></p>
+<table class="meta"><tbody>
+<tr><th>date</th><td>2026-07-13</td></tr>
+<tr><th>topic</th><td>시점/카메라 — 탑다운 고정 vs 쿼터뷰/아이소메트릭 변형</td></tr>
+<tr><th>status</th><td>확정 (사용자 승인 완료)</td></tr>
+<tr><th>related</th><td><a href="../format/game-format-tbd.html">../format/game-format-tbd.html</a>, <a href="2026-07-10-pixel-density-character-proportion.html">2026-07-10-pixel-density-character-proportion.html</a>, <a href="../pre-production-checklist.html">../pre-production-checklist.html</a></td></tr>
+</tbody></table>
+<main>
+<h1>회의록 — 시점/카메라</h1>
+
+<h2>안건</h2>
+<p>docs/format/game-format-tbd.html의 미확정 항목: 탑다운(스타듀밸리식) 고정 여부, 혹은 쿼터뷰 등 변형 여부. 직전 세션(2026-07-10)에서 도트 밀도/캐릭터 비율이 확정됨(월드 타일 16x16, 캐릭터 캔버스 32x64px 3.5등신, FHD4x/QHD5x 배율) — 이 결정과의 정합성이 핵심 쟁점.</p>
+
+<h2>참가</h2>
+<ul>
+<li>game-designer — 장르 정체성/철학 정합성</li>
+<li>technical-advisor — Godot 구현, 직전 확정 스펙과의 재사용 가능성</li>
+<li>scope-reviewer — 1인 개발 스코프 비관적 검토</li>
+</ul>
+
+<h2>리서치 브리핑 (메인 세션이 직접 WebSearch 수행, 모든 에이전트에게 동일 브리핑 공유)</h2>
+<ul>
+<li><strong>[신뢰도 낮음, 포럼 종합]</strong> 탑다운은 콘텐츠 제작·반복이 빠르고 개발자원 효율적. 아이소메트릭/쿼터뷰는 "더 아름다운 게임월드"라는 평가가 있으나 z-order(가림순서) 렌더링이 까다롭고 리소스도 더 듦 — "첫 프로젝트에는 장점보다 문제가 많을 수 있다"는 경고. 출처: <a href="https://www.neogaf.com/threads/designing-a-game-which-viewpoint-do-you-like-better-top-down-or-isometric.311390/">neogaf.com</a>, <a href="https://github.com/TeamPorcupine/ProjectPorcupine/issues/1081">github.com/TeamPorcupine</a></li>
+<li><strong>[신뢰도 중간]</strong> 스타듀밸리는 순수 탑다운이 아니라 "oblique(경사)/angled top-down"으로 불림. 방향 스프라이트는 4방향(상/하/좌/우, 좌우 미러링)만 사용. 출처: <a href="https://steamcommunity.com/app/413150/discussions/0/3223871682622343166/">steamcommunity.com</a>, <a href="https://stardewvalleywiki.com/Modding:Farmer_sprite">stardewvalleywiki.com</a></li>
+<li><strong>[신뢰도 중간]</strong> 4방향(6애니×8프레임=192프레임) 대비 8방향은 프레임 수 약 2배. 16x16 캐릭터는 8방향의 미묘한 차이를 표현할 해상도가 부족하고, 32x32 이상에서야 의미있게 보임. 출처: <a href="https://www.sprite-ai.art/blog/sprite-animation-frames">sprite-ai.art</a></li>
+<li><strong>[신뢰도 중간, WebFetch 없이 검색결과 원문 확인]</strong> Godot 4.x는 TileMap의 Tile Shape를 "Isometric", Tile Layout을 "Diamond Downward"로 네이티브 지원 — 엔진이 원천 차단하진 않음. 다만 세로 깊이 표현을 위해 TileMapLayer를 여러 겹 써야 하고, 이동 벡터는 화면좌표가 아닌 타일좌표(orthogonal) 기준으로 계산해야 함. 출처: <a href="https://docs.godotengine.org/en/stable/tutorials/2d/using_tilemaps.html">docs.godotengine.org</a>, <a href="https://stephan-bester.medium.com/isometric-tiles-for-a-pixel-art-game-in-godot-4-3-94b09846c9df">stephan-bester.medium.com</a></li>
+</ul>
+
+<h2>각 에이전트 입장</h2>
+<table>
+<thead><tr><th>에이전트</th><th>결론</th><th>핵심 근거</th></tr></thead>
+<tbody>
+<tr><td>game-designer</td><td>탑다운 고정</td><td>철학1(농장=주, 모험=종)에 비춰 카메라는 밭 그리드 가독성·제작 반복속도를 우선해야 함. 쿼터뷰의 장점(시각적 임팩트, 던전 연출감)은 서브시스템(모험)에 치우친 이득이라 우선순위 역전. 쿼터뷰였다면 얻었을 손해(모험 파트 시각적 임팩트 약화)는 카메라 줌/이펙트/컷인 초상화로 보완 가능하다고 인정.</td></tr>
+<tr><td>technical-advisor</td><td>탑다운 고정</td><td>2026-07-10 확정 스펙(16x16 정사각 그리드+32x64 캐릭터+정수배 업스케일)은 직교 그리드 전제 — 아이소메트릭은 타일이 다이아몬드형이 되어 이 확정 사항을 무효화·재작업시킴. Godot이 아이소메트릭을 지원해도 z-order/다중레이어 복잡도는 1인 개발에 순수 비용. "나중에 전환"은 정책 변경이 아니라 아트 전면 재제작.</td></tr>
+<tr><td>scope-reviewer</td><td>탑다운 고정</td><td>4→8방향 전환 시 애니메이션 프레임 약 2배 — 이미 지적된 스코프 리스크(파츠×애니메이션 조합비)를 M0(마을1 검증) 진입 전에 재도입하는 셈. 쿼터뷰 선택 시 직전 확정 사항은 부분 조정이 아니라 사실상 완전 재설계로 견적.</td></tr>
+</tbody>
+</table>
+
+<h2>충돌 지점 (숨기지 않고 기록)</h2>
+<p>세 에이전트가 서로 다른 결론을 예상했으나(특히 game-designer는 쿼터뷰의 시각적 임팩트/장르 차별화를 선호할 가능성이 있었음) 전부 탑다운 고정으로 수렴 — 세 번째 라운드 연속 만장일치. 유일하게 명시적으로 남은 트레이드오프는 game-designer가 스스로 인정한 것: 쿼터뷰였다면 얻었을 모험 파트(보스 정화 연출 등)의 시각적 임팩트 손실 — 카메라 줌/이펙트/컷인 초상화로 보완 여지를 남겨둠(이번 결정에서 구체 설계는 하지 않음).</p>
+
+<h2>사용자 최종 결정 (2026-07-13)</h2>
+<ol>
+<li><strong>시점/카메라: 탑다운(스타듀밸리식 오블리크/앵글드 탑다운) 고정.</strong> 쿼터뷰/아이소메트릭은 채택하지 않음.</li>
+<li><strong>2026-07-10 확정 스펙(월드 타일 16x16, 캐릭터 캔버스 32x64px 3.5등신, FHD4x/QHD5x 배율)은 그대로 유지 — 이번 결정으로 재검토 불필요.</strong></li>
+<li>모험 파트 시각적 임팩트 보완(카메라 줌/이펙트/컷인 초상화 등 구체 방식)은 이번 회의에서 확정하지 않고 추후 systems-designer/game-designer 재검토 대상으로 남김.</li>
+</ol>
+
+<h2>반영 문서</h2>
+<p>docs/format/game-format-tbd.html(미확정→확정 이동), docs/pre-production-checklist.html.</p>
+</main>
+</body>
+</html>
